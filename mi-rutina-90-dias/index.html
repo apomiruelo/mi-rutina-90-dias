@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rutina de 90 Días</title>
+    <meta name="theme-color" content="#2d3436">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mi Rutina 90 Días">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icon-header">
+                <i class="fas fa-calendar-alt"></i>
+                <h1>Mi Rutina de 90 Días</h1>
+            </div>
+            <p class="subtitle">Transforma tu cuerpo y mente en 3 meses</p>
+            
+            <div class="progress-bar">
+                <div class="progress" id="globalProgress"></div>
+            </div>
+            <p id="progressText">Día 1 de 90 - ¡Comienza tu transformación!</p>
+        </header>
+        
+        <div class="motivacion">
+            <i class="fas fa-quote-left"></i> La disciplina es el puente entre tus metas y tus logros <i class="fas fa-quote-right"></i>
+        </div>
+        
+        <div class="stats-container">
+            <h3><i class="fas fa-chart-line"></i> Mi Progreso</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="completedTasks">0</div>
+                    <div class="stat-label">Tareas Completadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="successRate">0%</div>
+                    <div class="stat-label">Tasa de Éxito</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="currentDay">1</div>
+                    <div class="stat-label">Día Actual</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="daysLeft">89</div>
+                    <div class="stat-label">Días Restantes</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-days">
+            <div class="nav-day active" data-day="lunes">Lun</div>
+            <div class="nav-day" data-day="martes">Mar</div>
+            <div class="nav-day" data-day="miercoles">Mié</div>
+            <div class="nav-day" data-day="jueves">Jue</div>
+            <div class="nav-day" data-day="viernes">Vie</div>
+            <div class="nav-day" data-day="sabado">Sáb</div>
+            <div class="nav-day" data-day="domingo">Dom</div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background-color: var(--fisico-intenso)"></div>Físico</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: var(--mental)"></div>Mental</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: var(--comida)"></div>Comida</div>
+            <div class="legend-item"><div class="legend-color" style="background-color: var(--transporte)"></div>Movilidad</div>
+        </div>
+        
+        <!-- LUNES -->
+        <div class="day-content active" id="lunes">
+            <div class="weekday-title">
+                <i class="fas fa-fist-raised"></i> Lunes - GYM (Pecho) + UNI + MMA
+            </div>
+            
+            <div class="day-card">
+                <div class="schedule-item preparacion">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-1')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-bell"></i></div>
+                        <div>4:00</div>
+                    </div>
+                    <div class="activity">Despertar + audio motivacional</div>
+                </div>
+                
+                <div class="schedule-item fisico-moderado">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-2')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-fire"></i></div>
+                        <div>4:20</div>
+                    </div>
+                    <div class="activity">Movilidad y calentamiento</div>
+                </div>
+                
+                <div class="schedule-item fisico-intenso">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-3')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-dumbbell"></i></div>
+                        <div>5:00</div>
+                    </div>
+                    <div class="activity">GYM: Pecho</div>
+                </div>
+                
+                <div class="schedule-item preparacion">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-4')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-tshirt"></i></div>
+                        <div>6:05</div>
+                    </div>
+                    <div class="activity">Estiramiento + cambio</div>
+                </div>
+                
+                <div class="schedule-item preparacion">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-5')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-backpack"></i></div>
+                        <div>6:20</div>
+                    </div>
+                    <div class="activity">Mochila lista + salida</div>
+                </div>
+                
+                <div class="schedule-item transporte">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-6')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-bus"></i></div>
+                        <div>6:30</div>
+                    </div>
+                    <div class="activity">Combi hacia Hack4u</div>
+                </div>
+                
+                <div class="schedule-item mental hack4u">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-7')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div>7:00</div>
+                    </div>
+                    <div class="activity">Hack4u + Desayuno</div>
+                </div>
+                
+                <div class="schedule-item transporte">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-8')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-bus"></i></div>
+                        <div>15:00</div>
+                    </div>
+                    <div class="activity">Transporte de regreso</div>
+                </div>
+                
+                <div class="schedule-item comida">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-9')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-utensils"></i></div>
+                        <div>15:30</div>
+                    </div>
+                    <div class="activity">Comida ligera + descanso</div>
+                </div>
+                
+                <div class="schedule-item mental">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-10')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-laptop"></i></div>
+                        <div>16:00</div>
+                    </div>
+                    <div class="activity">Edición de bodas</div>
+                </div>
+                
+                <div class="schedule-item fisico-intenso">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-11')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-fist-raised"></i></div>
+                        <div>17:30</div>
+                    </div>
+                    <div class="activity">MMA / Box</div>
+                </div>
+                
+                <div class="schedule-item mental">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-12')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-code"></i></div>
+                        <div>19:00</div>
+                    </div>
+                    <div class="activity">Hacking / Estudio</div>
+                </div>
+                
+                <div class="schedule-item comida">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-13')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-utensils"></i></div>
+                        <div>20:00</div>
+                    </div>
+                    <div class="activity">Cena + familia</div>
+                </div>
+                
+                <div class="schedule-item mental">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-14')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div>21:00</div>
+                    </div>
+                    <div class="activity">Reflexión diaria</div>
+                </div>
+                
+                <div class="schedule-item preparacion">
+                    <button class="check-button" onclick="toggleCompleted(this, 'lunes-15')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-bed"></i></div>
+                        <div>21:30</div>
+                    </div>
+                    <div class="activity">Preparar todo + Dormir</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MARTES -->
+        <div class="day-content" id="martes">
+            <div class="weekday-title">
+                <i class="fas fa-dumbbell"></i> Martes - GYM (Piernas) + UNI + HACKING
+            </div>
+            
+            <div class="day-card">
+                <!-- Mismas actividades que lunes pero con ejercicios de piernas -->
+                <div class="schedule-item fisico-intenso">
+                    <button class="check-button" onclick="toggleCompleted(this, 'martes-3')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-dumbbell"></i></div>
+                        <div>5:00</div>
+                    </div>
+                    <div class="activity">GYM: Piernas</div>
+                </div>
+                
+                <div class="schedule-item mental">
+                    <button class="check-button" onclick="toggleCompleted(this, 'martes-11')"><i class="far fa-circle"></i></button>
+                    <div class="time">
+                        <div class="time-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div>17:30</div>
+                    </div>
+                    <div class="activity">Hacking intensivo</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Los demás días (miércoles a domingo) con estructura similar -->
+        
+        <div class="recomendaciones">
+            <h3><i class="fas fa-lightbulb"></i> Tips para tu éxito</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Hidrátate constantemente durante el día</li>
+                <li><i class="fas fa-check-circle"></i> Prepara tu ropa la noche anterior</li>
+                <li><i class="fas fa-check-circle"></i> Enfócate en una tarea a la vez</li>
+                <li><i class="fas fa-check-circle"></i> Celebra tus pequeños logros diarios</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>¡Tú puedes! 💪 La consistencia es la clave del éxito</p>
+            <p>Diseñado para tu transformación de 90 días</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
