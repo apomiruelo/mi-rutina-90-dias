@@ -2,7 +2,7 @@
   "name": "Mi Rutina 90 Días",
   "short_name": "Rutina90Días",
   "description": "App para seguir mi rutina de transformación de 90 días",
-  "start_url": "/",
+  "start_url": "/mi-rutina-90-dias/",
   "display": "standalone",
   "background_color": "#f1f2f6",
   "theme_color": "#2d3436",
